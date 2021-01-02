@@ -42,6 +42,8 @@ class TelegramExtension {
       );
     } else if (this.identifyCommand('/wut', textMsg)) {
       tele.sendMessage(id, 'Wut', {}, Config.getBotKey());
+    } else {
+      tele.sendMessage(id, message, {}, Config.getBotKey());
     }
   }
 

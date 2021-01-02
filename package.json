@@ -7,7 +7,6 @@
   "description": "A simple Telegram Bot for IAS",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "lambda-serve": "netlify-lambda serve functions",
     "lambda-build": "netlify-lambda build functions"
   },
