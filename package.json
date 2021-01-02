@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlifiy-lambda build functions"
+    "lambda-build": "netlify-lambda build functions"
   },
   "dependencies": {
     "axios": "^0.19.2",
