@@ -1,7 +1,6 @@
 // This js file is an extension to the multi-purpose telegram_interface js file
 // meant for this bot in particular
-const Config = require('./config.js');
-const tele = require('./telegram_interface.js');
+const tele = require('./telegram-interface.js');
 
 class TelegramExtension {
   constructor() {
@@ -38,12 +37,12 @@ class TelegramExtension {
         id,
         'No functionality available',
         {},
-        Config.getBotKey(),
+        process.env.TELE_BOT_KEY,
       );
     } else if (this.identifyCommand('/wut', textMsg)) {
-      tele.sendMessage(id, 'Wut', {}, Config.getBotKey());
+      tele.sendMessage(id, 'Wut', {}, process.env.TELE_BOT_KEY);
     } else {
-      tele.sendMessage(id, message, {}, Config.getBotKey());
+      tele.sendMessage(id, message, {}, process.env.TELE_BOT_KEY);
     }
   }
 
@@ -53,7 +52,7 @@ class TelegramExtension {
 
   // Wrapper for telegram_interface.js sendMessage()
   async sendMsg(id, msg) {
-    tele.sendMessage(id, msg, {}, Config.getBotKey());
+    tele.sendMessage(id, msg, {}, process.env.TELE_BOT_KEY);
   }
 }
 
