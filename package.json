@@ -1,0 +1,31 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "ias-bot",
+  "version": "0.0.1",
+  "description": "A simple Telegram Bot for IAS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlifiy-lambda build functions"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.2",
+    "sqlite3": "^4.1.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
