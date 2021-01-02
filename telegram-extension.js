@@ -33,16 +33,16 @@ class TelegramExtension {
     // -- Commands
     // Start/registration
     if (this.identifyCommand('/start', textMsg)) {
-      tele.sendMessage(
+      await tele.sendMessage(
         id,
         'No functionality available',
         {},
         process.env.TELE_BOT_KEY,
       );
     } else if (this.identifyCommand('/wut', textMsg)) {
-      tele.sendMessage(id, 'Wut', {}, process.env.TELE_BOT_KEY);
+      await tele.sendMessage(id, 'Wut', {}, process.env.TELE_BOT_KEY);
     } else {
-      tele.sendMessage(id, message, {}, process.env.TELE_BOT_KEY);
+      await tele.sendMessage(id, message, {}, process.env.TELE_BOT_KEY);
     }
   }
 
@@ -52,7 +52,7 @@ class TelegramExtension {
 
   // Wrapper for telegram_interface.js sendMessage()
   async sendMsg(id, msg) {
-    tele.sendMessage(id, msg, {}, process.env.TELE_BOT_KEY);
+    await tele.sendMessage(id, msg, {}, process.env.TELE_BOT_KEY);
   }
 }
 
