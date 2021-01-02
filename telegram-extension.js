@@ -3,9 +3,10 @@
 const tele = require('./telegram-interface.js');
 
 class TelegramExtension {
-  constructor() {
+  constructor(botKey) {
     // idk what to use
     this.CALLBACK_DELIMETER = '<>';
+    this.BOT_KEY = botKey;
   }
 
   async processTeleCallback(callback) {
@@ -37,12 +38,12 @@ class TelegramExtension {
         id,
         'No functionality available',
         {},
-        process.env.TELE_BOT_KEY,
+        this.BOT_KEY,
       );
     } else if (this.identifyCommand('/wut', textMsg)) {
-      await tele.sendMessage(id, 'Wut', {}, process.env.TELE_BOT_KEY);
+      await tele.sendMessage(id, 'Wut', {}, this.BOT_KEY);
     } else {
-      await tele.sendMessage(id, message, {}, process.env.TELE_BOT_KEY);
+      await tele.sendMessage(id, message, {}, this.BOT_KEY);
     }
   }
 
@@ -52,7 +53,7 @@ class TelegramExtension {
 
   // Wrapper for telegram_interface.js sendMessage()
   async sendMsg(id, msg) {
-    await tele.sendMessage(id, msg, {}, process.env.TELE_BOT_KEY);
+    await tele.sendMessage(id, msg, {}, this.BOT_KEY);
   }
 }
 
