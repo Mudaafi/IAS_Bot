@@ -12,10 +12,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1",
     "googleapis": "^66.0.0",
-    "netlify-lambda": "^2.0.2",
-    "sqlite3": "^4.1.1"
+    "netlify-lambda": "^2.0.2"
   },
   "engines": {
     "node": "12.x"
